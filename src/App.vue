@@ -12,6 +12,12 @@ export default {
   components: {
     Navbar,
   },
+  watch: {
+    $route() {},
+  },
+  mounted() {
+    this.$store.commit("onStart");
+  },
 };
 </script>
 
