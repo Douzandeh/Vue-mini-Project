@@ -4,6 +4,7 @@ import HomeView   from "../views/HomeView.vue";
 import About      from "../views/AboutView.vue";
 import Profile    from "../views/Profile.vue";
 import Login      from "../views/Login.vue";
+import Register   from "../views/Register.vue";
 import Logout     from "../views/Logout.vue";
 
 
@@ -29,6 +30,12 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+    meta: { loginRedirect: true }
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
     meta: { loginRedirect: true }
   },
   {
