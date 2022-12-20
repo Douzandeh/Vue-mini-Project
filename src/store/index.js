@@ -5,13 +5,12 @@ export default createStore({
     isAuthenticated: false,
     token: "",
   },
-  getters: {},
   mutations: {
     onStart(state) {
       let token = localStorage.getItem("token");
       if (token) {
         state.isAuthenticated = true;
-        state.token = true;
+        state.token = token;
       } else {
         state.isAuthenticated = false;
         state.token = "";
@@ -20,7 +19,7 @@ export default createStore({
     login(state, token) {
       if (token) {
         state.isAuthenticated = true;
-        state.token = true;
+        state.token = token;
         localStorage.setItem("token", token);
       } else {
         state.isAuthenticated = false;

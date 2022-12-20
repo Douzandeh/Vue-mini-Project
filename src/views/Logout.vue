@@ -11,6 +11,7 @@ export default {
   methods: {
     doLogout() {
       this.$store.commit("logout");
+      this.$router.push("/login")
     },
   },
 };

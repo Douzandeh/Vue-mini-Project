@@ -13,7 +13,9 @@ export default {
     Navbar,
   },
   watch: {
-    $route() {},
+    $route() {
+      this.$store.commit("onStart");
+    },
   },
   mounted() {
     this.$store.commit("onStart");

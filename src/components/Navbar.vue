@@ -15,13 +15,13 @@
             <router-link class="nav-link active" to="/about">About</router-link>
           </li>
           <li class="nav-item">
-           <router-link class="nav-link active" to="/profile">Profile</router-link>
+           <router-link class="nav-link active" to="/profile" v-if="$store.state.isAuthenticated">Profile</router-link>
           </li>
           <li class="nav-item">
-           <router-link class="nav-link active" to="/login">Login</router-link>
+           <router-link class="nav-link active" to="/login" v-if="!$store.state.isAuthenticated">Login</router-link>
           </li>
           <li class="nav-item">
-           <router-link class="nav-link active" to="/logout">Logout</router-link>
+           <router-link class="nav-link active" to="/logout" v-if="$store.state.isAuthenticated">Logout</router-link>
           </li>
         </ul>
         <form class="d-flex" role="search">

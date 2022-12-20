@@ -10,7 +10,8 @@ export default {
   name: "Login",
   methods: {
     doLogin() {
-      this.$store.commit("Login", "abc123");
+      this.$store.commit("login", "abc123");
+      this.$router.push("/profile")
     },
   },
 };

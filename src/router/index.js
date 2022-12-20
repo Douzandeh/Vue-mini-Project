@@ -3,7 +3,7 @@ import HomeView   from "../views/HomeView.vue";
 import About      from "../views/AboutView.vue";
 import Profile    from "../views/Profile.vue";
 import Login      from "../views/Login.vue";
-import Logout      from "../views/Logout.vue";
+import Logout     from "../views/Logout.vue";
 
 
 
@@ -36,7 +36,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 });
 
