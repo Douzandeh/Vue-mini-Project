@@ -1,39 +1,27 @@
 <template>
   <div class="Home">
-    <h1>Home</h1>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
-      repellat aspernatur expedita recusandae eum consequuntur itaque eligendi
-      laboriosam, corrupti, fuga tempora repellendus rem hic esse sed?
-      Voluptatem, provident. Aut!
+    <h1 class="text-center mb-5">Home</h1>
+    <article v-for="article in articles">
+      <h3>
+        <a :href="`/article/${article.slug}`">{{ article.title }}</a>
+      </h3>
+      <div>
+        {{ article.description }}
+        <a :href="`/article/${article.slug}`">+ more</a>
+      </div>
       <hr />
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
-      repellat aspernatur expedita recusandae eum consequuntur itaque eligendi
-      laboriosam, corrupti, fuga tempora repellendus rem hic esse sed?
-      Voluptatem, provident. Aut!
-      <hr />
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
-      repellat aspernatur expedita recusandae eum consequuntur itaque eligendi
-      laboriosam, corrupti, fuga tempora repellendus rem hic esse sed?
-      Voluptatem, provident. Aut!
-      <hr />
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis non
-      repellat aspernatur expedita recusandae eum consequuntur itaque eligendi
-      laboriosam, corrupti, fuga tempora repellendus rem hic esse sed?
-      Voluptatem, provident. Aut!
-      <hr />
-    </div>
+    </article>
   </div>
 </template>
-
 <script>
 export default {
   name: "Home",
+  data() {
+    let articles = localStorage.getItem("articles");
+    articles = JSON.parse(articles);
+    return {
+      articles: articles,
+    };
+  },
 };
 </script>
